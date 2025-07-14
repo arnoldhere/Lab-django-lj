@@ -1,0 +1,73 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-body-info top-0 fixed">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Navbar brand -->
+
+			<h3 class="text-danger text-uppercase m-0 text-bold">Ecommyyy.</h3>
+
+			<!-- Left links -->
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'demo' %}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'about' %}">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact us</a>
+				</li>
+			</ul>
+			<!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
+
+		<!-- Right elements -->
+		<div class="d-flex align-items-center">
+			<!-- Icon -->
+			{% comment %}
+			<a class="text-reset me-3" href="#">
+				<i class="fas fa-shopping-cart"></i>
+			</a>
+			{% endcomment %}
+
+			<div class="container m-auto p-2">
+				<button class="btn btn-md btn-danger">Login</button>
+				<button class="btn btn-md btn-success">Signup</button>
+			</div>
+
+			<!-- Avatar -->
+			{% comment %}
+			<div class="dropdown">
+				<a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+					id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+					<img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+						alt="Black and White Portrait of a Man" loading="lazy" />
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+					<li>
+						<a class="dropdown-item" href="#">My profile</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">Settings</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#">Logout</a>
+					</li>
+				</ul>
+			</div>
+			{% endcomment %}
+		</div>
+		<!-- Right elements -->
+	</div>
+	<!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

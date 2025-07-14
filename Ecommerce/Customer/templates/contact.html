@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock title %}
+{% block content %}
+<div class="container-fluid bg-secondary m-auto p-3">
+    <h2 class="text-danger text-center">Feel Free to message | give your valuable feedback</h2>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <!-- {{form.as_p}} -->
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter Email" name="email" value="{{form.email.value|default:''}}">
+            </div>
+            <div class="form-group">
+                <label>Feedback message :</label>
+                <textarea class="form-control" id="feedback" aria-describedby="feedback" name="message"
+                    placeholder="Enter your feedback" value="{{form.message.value |default:''}}"></textarea>
+            </div>
+            <button type="submit"  class="btn btn-md btn-success">SUBMIT</button>
+            <button class="btn btn-danger">RESET</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
