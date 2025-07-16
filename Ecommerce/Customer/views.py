@@ -14,7 +14,8 @@ def Demo(req):
 
 
 def About(req):
-    return render(req, "about.html")
+    feedbacks = Feedback.objects.all().order_by('-createdAt')  # Fetch all feedback records latest first
+    return render(req, "about.html", {"feedbacks": feedbacks})
 
 
 # def Contact(req):
@@ -34,7 +35,7 @@ def Contact(req):
     return render(req, "contact.html", {"form": form})
 
 
-## 
+##
 """
 def Contact(request):
     if request.method == 'POST':

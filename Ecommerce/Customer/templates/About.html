@@ -1,13 +1,33 @@
 {% extends "base.html" %}
 {% block title %} About us {% endblock title %}
+
 {% block content %}
 <div class="container-fluid p-5 h-auto">
     <h2 class="text-center text-danger">About us | Know our story</h2>
     <p class="text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sint, labore, quas sequi quaerat eos fugit
-        molestiae impedit magnam obcaecati tempora, adipisci quasi perspiciatis voluptate cumque veniam! Sint, quos
-        voluptatum? Repudiandae illum aut, nesciunt expedita aliquid exercitationem vitae, sapiente laudantium labore
-        corrupti facere repellat consequatur iste accusantium earum soluta delectus?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. ...
     </p>
+
+    <hr class="my-5">
+
+    <h4 class="text-center text-primary mb-4">💬 What People Say About Us</h4>
+
+    <div class="row justify-content-center">
+        {% for fb in feedbacks %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                    <h6 class="card-title text-muted">{{ fb.email }}</h6>
+                    <p class="card-text">{{ fb.message }}</p>
+                </div>
+                <div class="card-footer text-end text-secondary small">
+                    {{ fb.createdAt|date:"M d, Y" }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-muted">No feedback received yet.</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
