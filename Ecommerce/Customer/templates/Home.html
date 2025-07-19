@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Shop Now | Explore more{% endblock title %}
+
+{% block style %}
+<style>
+    /* Animations */
+    .fade-in {
+        animation: fadeIn 1s ease-in forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Product card hover effect */
+    .product-card:hover {
+        transform: scale(1.03);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+</style>
+{% endblock style %}
+
+{% block content %}
+<!-- 🎯 Hero Section -->
+<header class="bg-light text-center py-5 fade-in">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Welcome to ShopNow</h1>
+        <p class="lead">Your one-stop store for the latest watches & accessories</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+    </div>
+</header>
+<!-- 🛍️ Products Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Products</h2>
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card h-100">
+                    <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Product">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Stylish Watch</h5>
+                        <p class="card-text">₹1,999</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat more products -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card h-100">
+                    <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Product">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Modern Watch</h5>
+                        <p class="card-text">₹2,499</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- You can loop this in Django -->
+        </div>
+    </div>
+</section>
+{% endblock content%}

@@ -17,7 +17,7 @@
 			<!-- Left links -->
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'demo' %}">Home</a>
+					<a class="nav-link" href="{% url 'home' %}">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'about' %}">About</a>
@@ -40,8 +40,16 @@
 			{% endcomment %}
 
 			<div class="container m-auto p-2">
-				<button class="btn btn-md btn-danger">Login</button>
-				<button class="btn btn-md btn-success">Signup</button>
+				<button class="btn btn-md btn-danger">
+					<a href="">
+						Login
+					</a>
+				</button>
+				<button class="btn btn-md btn-success">
+					<a href="{% url 'signup' %}">
+						Signup
+					</a>
+				</button>
 			</div>
 
 			<!-- Avatar -->
