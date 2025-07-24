@@ -17,9 +17,7 @@ def Demo(req):
 
 
 def About(req):
-    feedbacks = Feedback.objects.all().order_by(
-        "-createdAt"
-    )  # Fetch all feedback records latest first
+    feedbacks = Feedback.objects.all().order_by("-createdAt")  # Fetch all feedback records latest first
     return render(req, "about.html", {"feedbacks": feedbacks})
 
 
@@ -59,17 +57,8 @@ def Signup(req):
     return render(req, "signup.html", {"form": form})
 
 
-def Contact(req):
-    if req.method == "POST":
-        form = FeedbackForm(req.POST)
-        if form.is_valid():
-            form.save()  # insert record in db
-            print("Feeback submited...")
-            messages.success(req, "Thank you for your feedback!")
-            return redirect("contact")  # or reload same page with success msg
-    else:
-        form = FeedbackForm()
-    return render(req, "contact.html", {"form": form})
+
+
 
 
 """ Signup view to handle user registration for custom User model"""
@@ -102,7 +91,7 @@ def Signup(req):
 
 
 ##
-"""
+
 def Contact(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
@@ -120,7 +109,7 @@ def Contact(request):
         form = FeedbackForm()
 
     return render(request, 'feedback.html', {'form': form})
-"""
+
 ## Total manually form handling without even using model forms
 """Comparison of Form Handling Methods
 | Method               | Code Style            | DB Save                     | Validation       |
